@@ -81,6 +81,15 @@ export class HeroesService {
   getHeroes(): Heroe[] {
     return this.heroes;
   }
+
+  getHeroe(idx: string) {
+    return this.heroes[idx];
+  }
+
+
+  buscarHeroes(termino: string) {
+    let heroesArr: Heroe[] = [];
+  }
 }
 
 export interface Heroe {
