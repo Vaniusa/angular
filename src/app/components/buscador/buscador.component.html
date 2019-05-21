@@ -1,5 +1,15 @@
-<h1>Buscando: <small>{{termino}} </small></h1>
+<h1>Buscando:
+  <small>{{termino}} </small>
+</h1>
 <hr>
+
+<div class="row animated fadeIn fast" *ngIf = "heroes.length == 0">
+  <div class="col-md-12">
+    <div class="alert alert-info" role="alert">
+      No existe resultado con el termino: {{termino}}
+    </div>
+  </div>
+</div>
 
 
 <div class="card-columns">
@@ -9,7 +19,9 @@
     <div class="card-body">
       <h4 class="card-title">{{heroe.nombre}}</h4>
       <p class="card-text">{{heroe.bio}}</p>
-      <p class="card-text"><small class="text-muted">{{heroe.aparicion}}</small></p>
+      <p class="card-text">
+        <small class="text-muted">{{heroe.aparicion}}</small>
+      </p>
 
       <button (click)="verHeroe(i)" type="button" class="btn btn-outline-primary btn-block">Ver mas...</button>
       <!--      <a [routerLink]="['/heroe',i]" class="btn btn-outline-primary btn-block">Ver mas link...</a>-->
